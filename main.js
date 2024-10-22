@@ -33,4 +33,18 @@ let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
                     baixoOuAlto.textContent = "O último palpite foi muito alto";
                 }
             }
+
+            contagemPalpites++;
+            campoPalpite.value = "";
+            campoPalpite.focus();
+    }
+
+    envioPalpite.addEventListener('click', verificarPalpite);
+
+    function finalizarJogo() {
+        campoPalpite.disabled = true;
+        envioPalpite.disabled = true;
+        botaoReiniciar = document.createElement('button');
+        document.body.appendChild(botaoReiniciar);
+        botaoReiniciar.addEventListener('click', reiniciarJogo);
     }
